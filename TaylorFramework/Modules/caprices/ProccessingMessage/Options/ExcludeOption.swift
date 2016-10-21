@@ -12,7 +12,7 @@ let ExcludeLong = "--exclude"
 let ExcludeShort = "-e"
 
 struct ExcludeOption: ExecutableOption {
-    var analyzePath = NSFileManager.defaultManager().currentDirectoryPath
+    var analyzePath = FileManager.default.currentDirectoryPath
     var optionArgument: Path
     let name = "ExcludeOption"
     
@@ -21,7 +21,7 @@ struct ExcludeOption: ExecutableOption {
     }
     
     
-    func executeOnDictionary(inout dictionary: Options) {
+    func executeOnDictionary(_ dictionary: inout Options) {
         let excludePath = optionArgument.formattedExcludePath(analyzePath)
         if excludePath.isEmpty {
             dictionary = defaultErrorDictionary

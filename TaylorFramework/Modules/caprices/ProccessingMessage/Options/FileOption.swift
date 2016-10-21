@@ -12,7 +12,7 @@ let FileLong = "--file"
 let FileShort = "-f"
 
 struct FileOption: ExecutableOption {
-    var analyzePath = NSFileManager.defaultManager().currentDirectoryPath
+    var analyzePath = FileManager.default.currentDirectoryPath
     var optionArgument: Path
     let name = "FileOption"
     
@@ -21,7 +21,7 @@ struct FileOption: ExecutableOption {
     }
     
     
-    func executeOnDictionary(inout dictionary: Options) {
+    func executeOnDictionary(_ dictionary: inout Options) {
         dictionary.add([optionArgument.absolutePath(analyzePath)], toKey: ResultDictionaryFileKey)
     }
     

@@ -17,8 +17,8 @@ struct Scissors {
     
     - returns: **FileContent** containing 'path' to file and the tree of components.
     */
-    func tokenizeFileAtPath(path: String) -> FileContent {
-        guard NSFileManager.defaultManager().fileExistsAtPath(path) else {
+    func tokenizeFileAtPath(_ path: String) -> FileContent {
+        guard FileManager.default.fileExists(atPath: path) else {
             return FileContent(path: "", components: [])
         }
         let tree = Tree(file: File(path: path)!)

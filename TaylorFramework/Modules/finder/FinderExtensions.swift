@@ -13,7 +13,7 @@ typealias FilePath = String
 extension FilePath {
     static let Separator = "/"
     
-    func isKindOfType(type: String) -> Bool {
+    func isKindOfType(_ type: String) -> Bool {
         return self.hasSuffix(type)
     }
 }
@@ -21,28 +21,28 @@ extension FilePath {
 extension String {
     static let Empty = ""
     
-    func deleteSuffix(suffix: String) -> String {
+    func deleteSuffix(_ suffix: String) -> String {
         guard self.hasSuffix(suffix) else { return self }
         
-        return (self as NSString).substringToIndex(self.characters.count - suffix.characters.count)
+        return (self as NSString).substring(to: self.characters.count - suffix.characters.count)
     }
     
-    func stringByAppendingPathComponent(string: String) -> String {
-        return (self as NSString).stringByAppendingPathComponent(string)
+    func stringByAppendingPathComponent(_ string: String) -> String {
+        return (self as NSString).appendingPathComponent(string)
     }
 }
 
-extension SequenceType where Generator.Element == FilePath {
+extension Sequence where Iterator.Element == FilePath {
     
-    func keepPathsMatchingType(type: String) -> [FilePath] {
+    func keepPathsMatchingType(_ type: String) -> [FilePath] {
         return self.filter { $0.isKindOfType(type) }
     }
     
-    func excludePathsContainingSubpath(subpath: FilePath) -> [FilePath] {
+    func excludePathsContainingSubpath(_ subpath: FilePath) -> [FilePath] {
         return self.filter { !$0.hasPrefix(subpath) }
     }
     
-    func excludePathsContainingSubpathsInArray(subpaths: [FilePath]) -> [FilePath] {
+    func excludePathsContainingSubpathsInArray(_ subpaths: [FilePath]) -> [FilePath] {
         guard var remainedPaths = self as? [FilePath] else {
             return []
         }
@@ -53,10 +53,10 @@ extension SequenceType where Generator.Element == FilePath {
         return remainedPaths
     }
     
-    func deleteRootPath(rootPath: FilePath) -> [FilePath] {
+    func deleteRootPath(_ rootPath: FilePath) -> [FilePath] {
         let fullRootPath = rootPath + FilePath.Separator
         return self.map {
-            $0.stringByReplacingOccurrencesOfString(fullRootPath, withString: FilePath.Empty)
+            $0.replacingOccurrences(of: fullRootPath, with: FilePath.Empty)
         }
     }
 }

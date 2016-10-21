@@ -13,7 +13,7 @@ struct Arguments {
     let arguments: Options
     
     init () throws {
-        arguments = try caprice.processArguments(Process.arguments)
+        arguments = try caprice.processArguments(CommandLine.arguments)
     }
     
     var finderParameters: Options {

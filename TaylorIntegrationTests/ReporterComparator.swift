@@ -33,7 +33,7 @@ func !=(lhs: [String:AnyObject], rhs: [String:AnyObject]) -> Bool {
 
 class ReporterComparator {
     
-    func compareReporters(firstReporterPath: String, secondReporterPath: String) -> Bool {
+    func compareReporters(_ firstReporterPath: String, secondReporterPath: String) -> Bool {
         var violations1 = JSONToViolationParser().parseFile(firstReporterPath)
         violations1 = violations1.map { ( violation: [String:AnyObject]) -> [String:AnyObject] in
             var violationCopy = violation
