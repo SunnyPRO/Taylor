@@ -15,7 +15,7 @@ let DefaultExcludesFile = "/excludes.yml"
 let FlagKey = "flag"
 let FlagKeyValue = "info requested"
 
-let errorPrinter = Printer(verbosityLevel: .Error)
+let errorPrinter = Printer(verbosityLevel: .error)
 
 /* 
 If you change this class don't forget to fix his mock for actual right tests (if is case)
@@ -24,7 +24,7 @@ class MessageProcessor {
     
     let optionsProcessor = OptionsProcessor()
     
-    func processArguments(arguments: [String]) throws -> Options {
+    func processArguments(_ arguments: [String]) throws -> Options {
         guard arguments.count > 1 else { return defaultResultDictionary() }
         
         return try processMultipleArguments(arguments)
@@ -39,9 +39,9 @@ class MessageProcessor {
     }
     
     
-    func processMultipleArguments(arguments: [String]) throws -> Options {
+    func processMultipleArguments(_ arguments: [String]) throws -> Options {
         if arguments.count.isOdd {
-            return try optionsProcessor.processOptions(arguments)
+            return try optionsProcessor.processOptions(arguments: arguments)
         } else if arguments.containFlags {
             FlagBuilder().flag(arguments.second!).execute() //Safe to force unwrap
             exit(0)
@@ -66,13 +66,15 @@ class MessageProcessor {
     }
     
 
-    func setDefaultExcludesIfExistsToDictionary(inout dictionary: Options) {
-        guard let pathKey = dictionary[ResultDictionaryPathKey] where !pathKey.isEmpty else {
+    func setDefaultExcludesIfExistsToDictionary(_ dictionary: inout Options) {
+        let excludeFileReader = ExcludesFileReader()
+        
+        guard let pathKey = dictionary[ResultDictionaryPathKey] , !pathKey.isEmpty else {
             return
         }
         do {
             let defaultExcludesFilePath = defaultExcludesFilePathForDictionary(dictionary)
-            let excludePaths = try ExcludesFileReader().absolutePathsFromExcludesFile(defaultExcludesFilePath,
+            let excludePaths = try excludeFileReader.absolutePathsFromExcludesFile(defaultExcludesFilePath,
                                     forAnalyzePath: pathKey.first!)
             if !excludePaths.isEmpty {
                 dictionary[ResultDictionaryExcludesKey] = excludePaths
@@ -83,8 +85,8 @@ class MessageProcessor {
     }
     
 
-    func defaultExcludesFilePathForDictionary(dictionary: Options) -> String {
-        guard let pathKey = dictionary[ResultDictionaryPathKey] where !pathKey.isEmpty else {
+    func defaultExcludesFilePathForDictionary(_ dictionary: Options) -> String {
+        guard let pathKey = dictionary[ResultDictionaryPathKey] , !pathKey.isEmpty else {
             return String.Empty
         }
         return pathKey.first! + DefaultExcludesFile
@@ -92,7 +94,7 @@ class MessageProcessor {
     
     
     func defaultDictionaryWithPathAndType() -> Options {
-        return [ResultDictionaryPathKey : [NSFileManager.defaultManager().currentDirectoryPath],
+        return [ResultDictionaryPathKey : [FileManager.default.currentDirectoryPath],
                 ResultDictionaryTypeKey : [DefaultExtensionType]]
     }
     

@@ -20,13 +20,13 @@ extension Path {
     
     func lastComponentFromPath() -> String {
         if self.isEmpty { return String.Empty }
-        let pathComponents = self.componentsSeparatedByString(FilePath.Separator)
+        let pathComponents = self.components(separatedBy: FilePath.Separator)
         return pathComponents.last! // Safe to force unwrap
     }
     
     
-    func absolutePath(analyzePath: String = NSFileManager.defaultManager().currentDirectoryPath) -> Path {
-        if self.hasPrefix(TildeSymbol) { return NSHomeDirectory() + self.stringByReplacingOccurrencesOfString(TildeSymbol, withString: String.Empty) }
+    func absolutePath(_ analyzePath: String = FileManager.default.currentDirectoryPath) -> Path {
+        if self.hasPrefix(TildeSymbol) { return NSHomeDirectory() + self.replacingOccurrences(of: TildeSymbol, with: String.Empty) }
         if self.hasPrefix(FilePath.Separator) { return self }
         let concatenatedPaths = analyzePath + FilePath.Separator + self
         
@@ -34,7 +34,7 @@ extension Path {
     }
     
     
-    func formattedExcludePath(analyzePath: String = NSFileManager.defaultManager().currentDirectoryPath) -> Path {
+    func formattedExcludePath(_ analyzePath: String = FileManager.default.currentDirectoryPath) -> Path {
         if self.hasPrefix(SearchIndicator) && self.hasSuffix(SearchIndicator) { return self }
         if containsSymbolAsPrefixOrSuffix(SearchIndicator) { return String.Empty }
 
@@ -42,34 +42,34 @@ extension Path {
     }
     
     
-    private func containsSymbolAsPrefixOrSuffix(symbol: String) -> Bool {
+    fileprivate func containsSymbolAsPrefixOrSuffix(_ symbol: String) -> Bool {
         return (self.hasPrefix(symbol) && !self.hasSuffix(symbol)) || (!self.hasPrefix(symbol) && self.hasSuffix(symbol))
     }
     
     
-    private func editAbsolutePath() -> Path {
-        var pathComponents = self.componentsSeparatedByString(FilePath.Separator)
+    fileprivate func editAbsolutePath() -> Path {
+        var pathComponents = self.components(separatedBy: FilePath.Separator)
         editPathComponentsForDotShortcuts(&pathComponents)
         checkLastPathComponentsElement(&pathComponents)
         
-        return pathComponents.joinWithSeparator(FilePath.Separator)
+        return pathComponents.joined(separator: FilePath.Separator)
     }
     
     
-    private func editPathComponentsForDotShortcuts(inout pathComponents: [String]) {
-        for (index, element) in pathComponents.enumerate() {
+    fileprivate func editPathComponentsForDotShortcuts(_ pathComponents: inout [String]) {
+        for (index, element) in pathComponents.enumerated() {
             if element == CurrentDirectorySymbol {
-                pathComponents.removeAtIndex(index)
+                pathComponents.remove(at: index)
             }
             if element == ParentDirectorySymbol {
-                pathComponents.removeAtIndex(index)
-                pathComponents.removeAtIndex(index - 1)
+                pathComponents.remove(at: index)
+                pathComponents.remove(at: index - 1)
             }
         }
     }
     
     
-    private func checkLastPathComponentsElement(inout pathComponents: [String]) {
+    fileprivate func checkLastPathComponentsElement(_ pathComponents: inout [String]) {
         if pathComponents.isEmpty { return }
         if [String.Empty, RecursiveSymbol].contains(pathComponents.last!) {
             pathComponents.removeLast()

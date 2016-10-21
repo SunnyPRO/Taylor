@@ -4,17 +4,21 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
-    "B05820A7D804BC88CFF30866B1B6AA48EA40CC61" : 0,
     "7BD362AA8ED61196A42E017C36C53B5188F33460" : 0,
+    "2969C96FDCB102AE3AE93984DD6DFA776CE45F5D" : 9223372036854775807,
     "666268518F43D6F79C616866E69E2327BA1DE0CD" : 0,
+    "FD7DA18210A2C280E9107E37D7344F243FEE5F75" : 9223372036854775807,
+    "B05820A7D804BC88CFF30866B1B6AA48EA40CC61" : 0,
     "7168657FA27606DD81CFFFD10861F888FDC160B9" : 0,
     "2A246388B0F74238AC232D6726165C626D94002F" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "030B62DA-6EE2-47A2-83C6-6614096B7A5D",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "B05820A7D804BC88CFF30866B1B6AA48EA40CC61" : "taylor",
     "7BD362AA8ED61196A42E017C36C53B5188F33460" : "taylorModules\/caprices",
+    "2969C96FDCB102AE3AE93984DD6DFA776CE45F5D" : "ExcludesFileReader\/",
     "666268518F43D6F79C616866E69E2327BA1DE0CD" : "taylor\/Modules\/scissors\/",
+    "FD7DA18210A2C280E9107E37D7344F243FEE5F75" : "SourceKitten\/",
+    "B05820A7D804BC88CFF30866B1B6AA48EA40CC61" : "Taylor\/",
     "7168657FA27606DD81CFFFD10861F888FDC160B9" : "taylor\/Modules\/temper\/",
     "2A246388B0F74238AC232D6726165C626D94002F" : "taylor\/Modules\/finder\/"
   },
@@ -22,6 +26,11 @@
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Taylor.xcodeproj",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yopeso.com:iOS\/ExcludesFileReader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2969C96FDCB102AE3AE93984DD6DFA776CE45F5D"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yopeso.com:taylor\/finder.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
@@ -46,6 +55,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "git.yopeso.com:taylor\/taylor.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "B05820A7D804BC88CFF30866B1B6AA48EA40CC61"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/jpsim\/SourceKitten.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD7DA18210A2C280E9107E37D7344F243FEE5F75"
     }
   ]
 }

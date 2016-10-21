@@ -19,7 +19,7 @@ final class Component {
         self.name = name
     }
     
-    func makeComponent(type type: ComponentType, range: ComponentRange, name: String? = nil) -> Component {
+    func makeComponent(type: ComponentType, range: ComponentRange, name: String? = nil) -> Component {
         let component = Component(type: type, range: range, name: name)
         
         component.parent = self

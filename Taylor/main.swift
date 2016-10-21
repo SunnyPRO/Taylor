@@ -8,4 +8,5 @@
 
 import TaylorFramework
 
-Taylor().run()
+let taylorStart = Taylor()
+taylorStart.run()
