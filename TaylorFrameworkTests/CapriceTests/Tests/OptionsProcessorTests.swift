@@ -293,6 +293,8 @@ class OptionsProcessorTests: QuickSpec {
     }
 }
 
+
+//TODO: Check if overload == operators are the best choice
 func ==(lhs: [String: String], rhs: [String: String]) -> Bool {
     if lhs.count != rhs.count { return false }
     
@@ -325,19 +327,16 @@ func ==(lhs: [String: [String]], rhs: [String: [String]]) -> Bool {
     return true
 }
 
-//# TODO: - Complete equal op for Array<Array<Dictionary>>
 func ==(lhs: [[String: String]], rhs: [[String: String]]) -> Bool {
-//    if lhs.count != rhs.count { return false }
-//    
-//    for (key, lhsub) in lhs {
-//        if let rhsub = rhs[key] {
-//            if lhsub != rhsub {
-//                return false
-//            }
-//        } else {
-//            return false
-//        }
-//    }
+    if lhs.count != rhs.count { return false }
+    
+    for index in 0..<lhs.count {
+        if lhs[index] != rhs[index] {
+            return false
+        }
+    }
     
     return true
 }
+
+

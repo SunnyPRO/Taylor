@@ -41,6 +41,6 @@ extension Component : Equatable {}
 func ==(lhs: Component, rhs: Component) -> Bool {
     return lhs.range == rhs.range &&
         lhs.type == rhs.type &&
-        lhs.name == lhs.name &&
+        lhs.name == rhs.name &&
         (Set(lhs.components) == Set(rhs.components))
 }

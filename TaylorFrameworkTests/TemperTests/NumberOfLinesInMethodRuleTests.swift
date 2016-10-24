@@ -37,9 +37,9 @@ class NumberOfLinesInMethodRuleTests: QuickSpec {
             }
             it("should delete the redundant lines and return the correct number of lines") {
                 let component = Component(type: .function, range: ComponentRange(sl: 1, el: 100))
-                component.makeComponent(type: .emptyLines, range: ComponentRange(sl: 2, el: 5))
-                component.makeComponent(type: .comment, range: ComponentRange(sl: 6, el: 40))
-                component.makeComponent(type: .if, range: ComponentRange(sl: 50, el: 60)).makeComponent(type: .comment, range: ComponentRange(sl: 55, el: 59))
+                _ = component.makeComponent(type: .emptyLines, range: ComponentRange(sl: 2, el: 5))
+                _ = component.makeComponent(type: .comment, range: ComponentRange(sl: 6, el: 40))
+                _ = component.makeComponent(type: .if, range: ComponentRange(sl: 50, el: 60)).makeComponent(type: .comment, range: ComponentRange(sl: 55, el: 59))
                 let result = self.rule.checkComponent(component)
                 expect(result.value).to(equal(55))
             }

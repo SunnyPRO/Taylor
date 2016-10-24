@@ -13,15 +13,11 @@
 		542EF2781C076FBB004C7477 /* TaylorIntegrationTestResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 542EF2731C076FBB004C7477 /* TaylorIntegrationTestResources.bundle */; };
 		542EF2791C076FBB004C7477 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542EF2741C076FBB004C7477 /* StringExtensions.swift */; };
 		542EF27A1C076FBB004C7477 /* TaylorIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542EF2751C076FBB004C7477 /* TaylorIntegrationTests.swift */; };
-		65B24B021D797E83006D299A /* SWXMLHash.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 65B24B011D797E83006D299A /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		65B24B031D797EA8006D299A /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B24B011D797E83006D299A /* SWXMLHash.framework */; };
-		65B24B041D797ECC006D299A /* SWXMLHash.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 65B24B011D797E83006D299A /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		65B24B241D798640006D299A /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65B24B011D797E83006D299A /* SWXMLHash.framework */; };
 		692E462F1BF3AEF100D0886E /* Help.txt in Resources */ = {isa = PBXBuildFile; fileRef = 692E462E1BF3AEF100D0886E /* Help.txt */; };
 		692FCBEB1BED2B7F00DB5F16 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FCBEA1BED2B7F00DB5F16 /* main.swift */; };
 		692FCBEE1BED2C2A00DB5F16 /* TaylorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; };
 		692FCBF31BED2E2A00DB5F16 /* install in Resources */ = {isa = PBXBuildFile; fileRef = 692FCBF21BED2E2A00DB5F16 /* install */; };
-		692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69400EC81C32935B0065CDB0 /* TestFileClosureParameters.txt in Copy Files (23 items) */ = {isa = PBXBuildFile; fileRef = 69400EC61C32934B0065CDB0 /* TestFileClosureParameters.txt */; };
 		6943F84D1C38205A00208BBC /* TestFileGuard.txt in Copy Files (23 items) */ = {isa = PBXBuildFile; fileRef = 6943F84B1C381E0000208BBC /* TestFileGuard.txt */; };
 		69461E0A1BF61D2C00AF5B5C /* CLIReporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69461E091BF61D2C00AF5B5C /* CLIReporterTests.swift */; };
@@ -140,14 +136,17 @@
 		69B4DDA81BED209C005EA7D5 /* emptyExcludes.yml in Copy Files (23 items) */ = {isa = PBXBuildFile; fileRef = 69B4DCF71BED1FE0005EA7D5 /* emptyExcludes.yml */; };
 		69B4DDA91BED209C005EA7D5 /* excludes.yml in Copy Files (23 items) */ = {isa = PBXBuildFile; fileRef = 69B4DCF81BED1FE0005EA7D5 /* excludes.yml */; };
 		69EA54F91BEE209C007713A6 /* Taylor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EA54F81BEE209C007713A6 /* Taylor.swift */; };
-		947250B31DBA11E600AF6A26 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9410B7491DBA082C00F6050E /* SourceKittenFramework.framework */; };
-		947250B41DBA11E700AF6A26 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9410B7491DBA082C00F6050E /* SourceKittenFramework.framework */; };
-		947250B51DBA11E700AF6A26 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9410B7491DBA082C00F6050E /* SourceKittenFramework.framework */; };
 		947250C51DBA1C1600AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
 		947250C61DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
 		947250C71DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
-		94EAD5381DBA6EE1004A7801 /* ExcludesFileReader.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		94EAD5391DBA6EE1004A7801 /* SourceKittenFramework.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 9410B7491DBA082C00F6050E /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		948BF7F61DC8894D004D89B8 /* SourceKittenFramework.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B31DC74B0600D9C6D5 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		948BF7F71DC8894D004D89B8 /* SWXMLHash.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		948BF7F81DC8894D004D89B8 /* Yaml.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B51DC74B0600D9C6D5 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		948BF7F91DC8894D004D89B8 /* ExcludesFileReader.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		94A444B61DC74B0600D9C6D5 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B31DC74B0600D9C6D5 /* SourceKittenFramework.framework */; };
+		94A444B71DC74B0600D9C6D5 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; };
+		94A444B81DC74B0600D9C6D5 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B51DC74B0600D9C6D5 /* Yaml.framework */; };
+		94A444BC1DC75FF600D9C6D5 /* TaylorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; };
 		94EAD53A1DBA6F0B004A7801 /* ExcludesFileReader.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A327502F1C62835900F7DFA2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; };
 		A32750301C62835900F7DFA2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; };
@@ -218,14 +217,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		692FCBEF1BED2DD400DB5F16 /* CopyFiles */ = {
+		692FCBEF1BED2DD400DB5F16 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in CopyFiles */,
+				948BF7F61DC8894D004D89B8 /* SourceKittenFramework.framework in Copy Files */,
+				948BF7F71DC8894D004D89B8 /* SWXMLHash.framework in Copy Files */,
+				948BF7F81DC8894D004D89B8 /* Yaml.framework in Copy Files */,
+				948BF7F91DC8894D004D89B8 /* ExcludesFileReader.framework in Copy Files */,
+				692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		69B4DCD51BED1C69005EA7D5 /* Copy Files */ = {
@@ -234,9 +238,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				94EAD5381DBA6EE1004A7801 /* ExcludesFileReader.framework in Copy Files */,
-				94EAD5391DBA6EE1004A7801 /* SourceKittenFramework.framework in Copy Files */,
-				65B24B021D797E83006D299A /* SWXMLHash.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,7 +288,6 @@
 				94EAD53A1DBA6F0B004A7801 /* ExcludesFileReader.framework in CopyFiles */,
 				A32750351C62836600F7DFA2 /* Nimble.framework in CopyFiles */,
 				A32750361C62836600F7DFA2 /* Quick.framework in CopyFiles */,
-				65B24B041D797ECC006D299A /* SWXMLHash.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,7 +301,6 @@
 		542EF2731C076FBB004C7477 /* TaylorIntegrationTestResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TaylorIntegrationTestResources.bundle; sourceTree = "<group>"; };
 		542EF2741C076FBB004C7477 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		542EF2751C076FBB004C7477 /* TaylorIntegrationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaylorIntegrationTests.swift; sourceTree = "<group>"; };
-		65B24B011D797E83006D299A /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SWXMLHash.framework; path = ../../Carthage/Build/Mac/SWXMLHash.framework; sourceTree = "<group>"; };
 		692E462E1BF3AEF100D0886E /* Help.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Help.txt; sourceTree = "<group>"; };
 		692FCBDD1BED2A2400DB5F16 /* Taylor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taylor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		692FCBEA1BED2B7F00DB5F16 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -430,8 +429,10 @@
 		69EA54F81BEE209C007713A6 /* Taylor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Taylor.swift; sourceTree = "<group>"; };
 		9410B72E1DBA053F00F6050E /* SourceKitten.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceKitten.h; sourceTree = "<group>"; };
 		9410B72F1DBA053F00F6050E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9410B7491DBA082C00F6050E /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SourceKittenFramework.framework; sourceTree = "<group>"; };
 		947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExcludesFileReader.framework; sourceTree = "<group>"; };
+		94A444B31DC74B0600D9C6D5 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SourceKittenFramework.framework; sourceTree = "<group>"; };
+		94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = "<group>"; };
+		94A444B51DC74B0600D9C6D5 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Yaml.framework; sourceTree = "<group>"; };
 		A327502D1C62835900F7DFA2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		A327502E1C62835900F7DFA2 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = SOURCE_ROOT; };
 		A36B2F001B98244F0049F590 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -466,11 +467,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				542EF26A1C076F8C004C7477 /* TaylorFramework.framework in Frameworks */,
-				947250B51DBA11E700AF6A26 /* SourceKittenFramework.framework in Frameworks */,
 				947250C71DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */,
 				A32750301C62835900F7DFA2 /* Nimble.framework in Frameworks */,
 				A32750321C62835900F7DFA2 /* Quick.framework in Frameworks */,
-				65B24B241D798640006D299A /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,9 +485,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65B24B031D797EA8006D299A /* SWXMLHash.framework in Frameworks */,
-				947250B31DBA11E600AF6A26 /* SourceKittenFramework.framework in Frameworks */,
 				947250C51DBA1C1600AF6A26 /* ExcludesFileReader.framework in Frameworks */,
+				94A444B81DC74B0600D9C6D5 /* Yaml.framework in Frameworks */,
+				94A444B61DC74B0600D9C6D5 /* SourceKittenFramework.framework in Frameworks */,
+				94A444B71DC74B0600D9C6D5 /* SWXMLHash.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,9 +496,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94A444BC1DC75FF600D9C6D5 /* TaylorFramework.framework in Frameworks */,
 				947250C61DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */,
 				A32750311C62835900F7DFA2 /* Quick.framework in Frameworks */,
-				947250B41DBA11E700AF6A26 /* SourceKittenFramework.framework in Frameworks */,
 				A327502F1C62835900F7DFA2 /* Nimble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1066,9 +1066,10 @@
 		FF967AB31CBC025900A42BDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				94A444B31DC74B0600D9C6D5 /* SourceKittenFramework.framework */,
+				94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */,
+				94A444B51DC74B0600D9C6D5 /* Yaml.framework */,
 				947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */,
-				9410B7491DBA082C00F6050E /* SourceKittenFramework.framework */,
-				65B24B011D797E83006D299A /* SWXMLHash.framework */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
@@ -1112,7 +1113,7 @@
 				692FCBD91BED2A2400DB5F16 /* Sources */,
 				692FCBDA1BED2A2400DB5F16 /* Frameworks */,
 				692FCBDB1BED2A2400DB5F16 /* Resources */,
-				692FCBEF1BED2DD400DB5F16 /* CopyFiles */,
+				692FCBEF1BED2DD400DB5F16 /* Copy Files */,
 			);
 			buildRules = (
 			);

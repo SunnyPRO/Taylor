@@ -42,13 +42,13 @@ final class Pacman {
         let process = Process()
         
         process.launchPath = path
-        process.arguments = ["pythion", path, "/pacman.py"]
+        process.arguments = ["python", path, "/pacman.py"]
         removeMap()
     }
     
     func getGamePath() -> String {
         let path =  Bundle(for: type(of: self)).path(forResource: "pacman", ofType: "py")
-        return path ?? ("" as NSString).deletingLastPathComponent
+        return ((path ?? "") as NSString).deletingLastPathComponent
     }
     
     /**

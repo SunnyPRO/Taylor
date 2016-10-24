@@ -124,12 +124,12 @@ class ComponentTests: QuickSpec {
                 it("should be equal if they have same components but in different order") {
                     let component1 = Component(type: .function, range: getTestRange(), name: "Test")
                     let component2 = Component(type: .class, range: getTestRange(), name: "Test")
-                    component.makeComponent(type: component1.type, range: component1.range)
-                    component.makeComponent(type: component2.type, range: component2.range)
+                    _ = component.makeComponent(type: component1.type, range: component1.range)
+                    _ = component.makeComponent(type: component2.type, range: component2.range)
                     
-                    let testComponent = Component(type: .class, range: getTestRange())
-                    testComponent.makeComponent(type: component2.type, range: component2.range)
-                    testComponent.makeComponent(type: component1.type, range: component1.range)
+                    let testComponent = Component(type: .class, range: getTestRange(), name: "Test")
+                    _ = testComponent.makeComponent(type: component2.type, range: component2.range)
+                    _ = testComponent.makeComponent(type: component1.type, range: component1.range)
                     
                     expect(testComponent).to(equal(component))
                 }
