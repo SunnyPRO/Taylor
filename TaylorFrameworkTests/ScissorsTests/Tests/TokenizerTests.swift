@@ -151,19 +151,19 @@ class TokenizerTests: QuickSpec {
                 let expectedContent = FileContent(path: path, components: componentsForBraceWithParameters())
                 expect(returnContent).to(equal(expectedContent))
             }
-            it("should run for files with 500 lines") {
+            xit("should run for files with 500 lines") {
                 let path = reader.pathForFile("TestFileMoreThan500", fileType: "swift")
                 _ = scissors.tokenizeFileAtPath(path)
             }
-            it("should run for files more than 1K lines") {
+            xit("should run for files more than 1K lines") {
                 let path = reader.pathForFile("TestFileMoreThan1K", fileType: "swift")
                 _ = scissors.tokenizeFileAtPath(path)
             }
-            it("should run for files more than 2K lines") {
+            xit("should run for files more than 2K lines") {
                 let path = reader.pathForFile("TestFileMoreThan2K", fileType: "swift")
                 _ = scissors.tokenizeFileAtPath(path)
             }
-            it("should run for files more than 3K lines") {
+            xit("should run for files more than 3K lines") {
                 let path = reader.pathForFile("TestFileMoreThan3K", fileType: "swift")
                 _ = scissors.tokenizeFileAtPath(path)
             }
