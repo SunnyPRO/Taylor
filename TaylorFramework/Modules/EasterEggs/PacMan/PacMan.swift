@@ -42,7 +42,7 @@ final class Pacman {
         let process = Process()
         
         process.launchPath = path
-        process.arguments = ["pythion", path, "/pacman.py"]
+        process.arguments = ["python", path, "/pacman.py"]
         removeMap()
     }
     

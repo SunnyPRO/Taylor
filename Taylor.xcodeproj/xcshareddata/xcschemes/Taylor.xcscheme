@@ -7,7 +7,7 @@
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "YES"
             buildForProfiling = "YES"
             buildForArchiving = "YES"
@@ -84,7 +84,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "-vl info -ef ${PROJECT_DIR}/exclude.yopeso.yml -p ${PROJECT_DIR}"
+            argument = "-vl"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>

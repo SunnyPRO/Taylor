@@ -151,7 +151,7 @@ class TokenizerTests: QuickSpec {
                 let expectedContent = FileContent(path: path, components: componentsForBraceWithParameters())
                 expect(returnContent).to(equal(expectedContent))
             }
-            xit("should run for files with 500 lines") {
+            it("should run for files with 500 lines") {
                 let path = reader.pathForFile("TestFileMoreThan500", fileType: "swift")
                 _ = scissors.tokenizeFileAtPath(path)
             }
