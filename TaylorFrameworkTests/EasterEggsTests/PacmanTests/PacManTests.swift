@@ -44,22 +44,22 @@ class PacmanTests: QuickSpec {
                     if FileManager.default.fileExists(atPath: tempPath) {
                         FileManager.default.removeFileAtPath(tempPath)
                     }
-                    pacman.createMap()
+                    _ = pacman.createMap()
                     expect(FileManager.default.fileExists(atPath: tempPath)).to(beTrue())
                 }
                 it("should create it in the right place") {
-                    pacman.createMap()
+                    _ = pacman.createMap()
                     expect(FileManager.default.fileExists(atPath: tempPath + "/map.dat")).to(beTrue())
                     pacman.removeMap()
                 }
                 it("should remove it if asked to") {
-                    pacman.createMap()
+                    _ = pacman.createMap()
                     pacman.removeMap()
                     expect(FileManager.default.fileExists(atPath: tempPath + "/map.dat")).to(beFalse())
                 }
                 it("should recreate it if already exists") {
-                    pacman.createMap()
-                    pacman.createMap()
+                    _ = pacman.createMap()
+                    _ = pacman.createMap()
                     expect(FileManager.default.fileExists(atPath: tempPath + "/map.dat")).to(beTrue())
                     pacman.removeMap()
                 }
