@@ -1703,7 +1703,7 @@
 				542EF2671C076F7F004C7477 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		692FCBE71BED2A2400DB5F16 /* Build configuration list for PBXNativeTarget "Taylor" */ = {
 			isa = XCConfigurationList;
@@ -1712,7 +1712,7 @@
 				692FCBE91BED2A2400DB5F16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		69B4DC921BED1BD3005EA7D5 /* Build configuration list for PBXNativeTarget "TaylorFramework" */ = {
 			isa = XCConfigurationList;
@@ -1721,7 +1721,7 @@
 				69B4DC941BED1BD3005EA7D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		69B4DCE91BED1F87005EA7D5 /* Build configuration list for PBXNativeTarget "TaylorFrameworkTests" */ = {
 			isa = XCConfigurationList;
@@ -1730,7 +1730,7 @@
 				69B4DCEB1BED1F87005EA7D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 		A36B2EF11B98244F0049F590 /* Build configuration list for PBXProject "Taylor" */ = {
 			isa = XCConfigurationList;
@@ -1739,7 +1739,7 @@
 				A36B2F0D1B98244F0049F590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Debug;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
