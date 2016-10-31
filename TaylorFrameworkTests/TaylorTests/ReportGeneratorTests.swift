@@ -12,21 +12,15 @@ import Foundation
 @testable import TaylorFramework
 
 class ReportGeneratorTests : QuickSpec {
-// TODO: Fix report generator
+//FIXME: Fix report generator
 //    override func spec() {
 //        describe("Report generator") {
 //            
 //            var reportGenerator: ReportGenerator!
 //            
-//            beforeEach {
-//                reportGenerator = ReportGenerator(arguments: try! Arguments(), printer: Printer(verbosityLevel: .info))
-//            }
-//            
-//            afterEach {
-//                reportGenerator = nil
-//            }
 //            
 //            it("should initialize reporter with default report file name if it is not gived") {
+//                reportGenerator = ReportGenerator(arguments: try! Arguments() , printer: Printer(verbosityLevel: .info))
 //                let outputReporter = [ReporterTypeKey : "json"]
 //                let resultReporter = reportGenerator.reporterWithType("json", withRepresentation: outputReporter)
 //                let expectedFileName = "taylor_report.json"

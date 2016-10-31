@@ -7,17 +7,17 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
-	<string>SourceKittenFramework</string>
+	<string>Yaml</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.sourcekitten.SourceKittenFramework</string>
+	<string>behrang.Yaml</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>SourceKittenFramework</string>
+	<string>Yaml</string>
 	<key>CFBundlePackageType</key>
 	<string>FMWK</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.14.1</string>
+	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleSupportedPlatforms</key>
@@ -40,7 +40,5 @@
 	<string>0810</string>
 	<key>DTXcodeBuild</key>
 	<string>8B62</string>
-	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2015 SourceKitten. All rights reserved.</string>
 </dict>
 </plist>
