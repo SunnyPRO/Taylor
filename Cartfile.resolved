@@ -1,5 +1,5 @@
-github "Quick/Nimble" "v5.1.0"
+github "Quick/Nimble" "v5.1.1"
 github "Quick/Quick" "v0.10.0"
 github "drmohundro/SWXMLHash" "3.0.2"
 github "behrang/YamlSwift" "2.0.1"
-github "SunnyPRO/SourceKitten" "485b783ccb1e539341d461470e3cbba1e1630c6f"
+github "yopeso/SourceKitten" "83a7702deaf85a41c5acec616d0f9018875d5237"
