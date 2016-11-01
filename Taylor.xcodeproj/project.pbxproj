@@ -17,7 +17,7 @@
 		692FCBEB1BED2B7F00DB5F16 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 692FCBEA1BED2B7F00DB5F16 /* main.swift */; };
 		692FCBEE1BED2C2A00DB5F16 /* TaylorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; };
 		692FCBF31BED2E2A00DB5F16 /* install in Resources */ = {isa = PBXBuildFile; fileRef = 692FCBF21BED2E2A00DB5F16 /* install */; };
-		692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		69400EC81C32935B0065CDB0 /* TestFileClosureParameters.txt in Copy Files (23 items) */ = {isa = PBXBuildFile; fileRef = 69400EC61C32934B0065CDB0 /* TestFileClosureParameters.txt */; };
 		6943F84D1C38205A00208BBC /* TestFileGuard.txt in Copy Files (23 items) */ = {isa = PBXBuildFile; fileRef = 6943F84B1C381E0000208BBC /* TestFileGuard.txt */; };
 		69461E0A1BF61D2C00AF5B5C /* CLIReporterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69461E091BF61D2C00AF5B5C /* CLIReporterTests.swift */; };
@@ -139,14 +139,14 @@
 		947250C51DBA1C1600AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
 		947250C61DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
 		947250C71DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
+		948BF7F61DC8894D004D89B8 /* SourceKittenFramework.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B31DC74B0600D9C6D5 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		948BF7F71DC8894D004D89B8 /* SWXMLHash.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		948BF7F81DC8894D004D89B8 /* Yaml.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B51DC74B0600D9C6D5 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		948BF7F91DC8894D004D89B8 /* ExcludesFileReader.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		94A444B61DC74B0600D9C6D5 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B31DC74B0600D9C6D5 /* SourceKittenFramework.framework */; };
 		94A444B71DC74B0600D9C6D5 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; };
 		94A444B81DC74B0600D9C6D5 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B51DC74B0600D9C6D5 /* Yaml.framework */; };
-		94A444B91DC74B1B00D9C6D5 /* SourceKittenFramework.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B31DC74B0600D9C6D5 /* SourceKittenFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		94A444BA1DC74B1B00D9C6D5 /* SWXMLHash.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		94A444BB1DC74B1B00D9C6D5 /* Yaml.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B51DC74B0600D9C6D5 /* Yaml.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		94A444BC1DC75FF600D9C6D5 /* TaylorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; };
-		94EAD5381DBA6EE1004A7801 /* ExcludesFileReader.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		94EAD53A1DBA6F0B004A7801 /* ExcludesFileReader.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A327502F1C62835900F7DFA2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; };
 		A32750301C62835900F7DFA2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; };
@@ -217,14 +217,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		692FCBEF1BED2DD400DB5F16 /* CopyFiles */ = {
+		692FCBEF1BED2DD400DB5F16 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in CopyFiles */,
+				948BF7F61DC8894D004D89B8 /* SourceKittenFramework.framework in Copy Files */,
+				948BF7F71DC8894D004D89B8 /* SWXMLHash.framework in Copy Files */,
+				948BF7F81DC8894D004D89B8 /* Yaml.framework in Copy Files */,
+				948BF7F91DC8894D004D89B8 /* ExcludesFileReader.framework in Copy Files */,
+				692FCBF41BED2E8400DB5F16 /* TaylorFramework.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		69B4DCD51BED1C69005EA7D5 /* Copy Files */ = {
@@ -233,10 +238,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				94A444B91DC74B1B00D9C6D5 /* SourceKittenFramework.framework in Copy Files */,
-				94A444BA1DC74B1B00D9C6D5 /* SWXMLHash.framework in Copy Files */,
-				94A444BB1DC74B1B00D9C6D5 /* Yaml.framework in Copy Files */,
-				94EAD5381DBA6EE1004A7801 /* ExcludesFileReader.framework in Copy Files */,
 			);
 			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1112,7 +1113,7 @@
 				692FCBD91BED2A2400DB5F16 /* Sources */,
 				692FCBDA1BED2A2400DB5F16 /* Frameworks */,
 				692FCBDB1BED2A2400DB5F16 /* Resources */,
-				692FCBEF1BED2DD400DB5F16 /* CopyFiles */,
+				692FCBEF1BED2DD400DB5F16 /* Copy Files */,
 			);
 			buildRules = (
 			);
