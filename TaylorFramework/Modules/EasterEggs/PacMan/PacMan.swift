@@ -41,9 +41,11 @@ final class Pacman {
         
         let process = Process()
         
-        process.launchPath = path
-        process.arguments = ["python", path, "/pacman.py"]
-        removeMap()
+        process.launchPath = "/usr/bin/python"
+        process.currentDirectoryPath = "\(NSHomeDirectory())" + "/tmp"
+        process.arguments = [path.stringByAppendingPathComponent("pacman.py")]
+        process.launch()
+//        removeMap()
     }
     
     func getGamePath() -> String {
