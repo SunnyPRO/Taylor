@@ -33,19 +33,20 @@ final class Pacman {
     If no paths were given, no game instance will run.
     */
     func start() {
+        //TODO: Review/redo pacman execution
+        removeMap()
         guard !paths.isEmpty && createMap() else {
             print("An unexpected error occured when launching Pacman.")
             return
         }
+        let task = Process()
         let path = getGamePath()
         
-        let process = Process()
-        
-        process.launchPath = "/usr/bin/python"
-        process.currentDirectoryPath = "\(NSHomeDirectory())" + "/tmp"
-        process.arguments = [path.stringByAppendingPathComponent("pacman.py")]
-        process.launch()
-//        removeMap()
+        task.launchPath = "/usr/bin/open"
+        task.arguments = ["-a", "Terminal.app", path.stringByAppendingPathComponent("pacman.py")]
+        task.launch()
+        sleep(4)
+        removeMap()
     }
     
     func getGamePath() -> String {

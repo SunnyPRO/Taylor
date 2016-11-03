@@ -123,7 +123,7 @@ class TaylorIntegrationTests: QuickSpec {
                 runTask.launch()
                 runTask.waitUntilExit()
                 let reporterPath = self.analyzeFilesPath.stringByAppendingPathComponent("taylor_report.json")
-                expect(ReporterComparator().compareReporters(self.analyzeFilesPath + "/" + self.resultFileName, secondReporterPath: reporterPath)).to(beTrue())
+                expect(ReporterComparator().compareReporters(self.resultFilePath, secondReporterPath: reporterPath)).to(beTrue())
                 do {
                     if FileManager.default.fileExists(atPath: reporterPath) {
                         try FileManager.default.removeItem(atPath: reporterPath)
