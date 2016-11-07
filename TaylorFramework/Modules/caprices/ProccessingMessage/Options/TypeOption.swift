@@ -16,7 +16,7 @@ struct TypeOption: ExecutableOption {
     var optionArgument: String
     let name = "TypeOption"
     
-    init(argument: String = String.Empty) {
+    init(argument: String = "") {
         optionArgument = argument
     }
     

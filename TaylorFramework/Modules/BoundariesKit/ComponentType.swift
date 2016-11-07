@@ -14,7 +14,7 @@ enum ComponentType {
     case `class`, `struct`, `enum`, enumElement, `protocol`, `extension`
     case associatedType, `typealias`, parameter
     case `for`, `while`, `repeat`, `if`, `guard`, `switch`, `case`, brace, closure
-    case array, dictionary, object, element, Init, conditionalExpression, pattern, typeReference
+    case array, dictionary, object, element, `Init`, conditionalExpression, pattern, typeReference
     
     case and, or, nilCoalescing, emptyLines, comment, ternary, elseIf, `else`
     case other
@@ -22,7 +22,7 @@ enum ComponentType {
     init(rawValue: String) {
         self = componentTypeUIDs[rawValue] ?? .other
     }
-    
+
     static let ParentComponents = [
         ComponentType.function, .class, .struct, .enum, .protocol, .extension, .for, .parameter,
                     .for, .while, .repeat, .if, .guard, .switch, .case, .brace, .closure

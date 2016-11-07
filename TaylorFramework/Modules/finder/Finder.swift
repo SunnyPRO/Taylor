@@ -12,7 +12,7 @@ final class Finder {
     fileprivate let fileManager: FileManager
     fileprivate let printer: ErrorPrinter
     fileprivate var parameters: Parameters?
-    fileprivate var excludes: [FilePath]!
+    fileprivate var excludes = [FilePath]()
     
     init(fileManager: FileManager = FileManager.default, printer: Printer = Printer(verbosityLevel: .error)) {
         self.fileManager = fileManager
@@ -21,14 +21,15 @@ final class Finder {
     
     func findFilePaths(parameters dictionary: Options) -> [String] {
         parameters = Parameters(dictionary: dictionary, printer: printer)
-        guard parameters != nil && validateParameters(parameters!) else {
+        guard let _ = parameters.flatMap({ self.validateParameters($0) }),
+              let validParams = parameters else {
             return []
         }
-        _ = parameters!.rootPath.deleteSuffix(FilePath.Separator)
-        excludes = parameters!.excludes.deleteRootPath(parameters!.rootPath)
-        let pathsFromDirectory = findPathsInDirectory(parameters!.rootPath)
+        _ = validParams.rootPath.deleteSuffix(FilePath.Separator)
+        excludes = validParams.excludes.deleteRootPath(validParams.rootPath)
+        let pathsFromDirectory = findPathsInDirectory(validParams.rootPath)
         
-        return (pathsFromDirectory + parameters!.files).unique
+        return (pathsFromDirectory + validParams.files).unique
     }
     
     fileprivate func validateParameters(_ parameters: Parameters) -> Bool {

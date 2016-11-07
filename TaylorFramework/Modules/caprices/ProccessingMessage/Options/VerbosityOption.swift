@@ -35,11 +35,11 @@ struct VerbosityOption: InformationalOption {
     func verbosityLevelFromOption() -> VerbosityLevel {
         switch optionArgument {
         case VerbosityLevelInfo:
-            return VerbosityLevel.info
+            return .info
         case VerbosityLevelWarning:
-            return VerbosityLevel.warning
+            return .warning
         default:
-            return VerbosityLevel.error
+            return .error
         }
     }
     

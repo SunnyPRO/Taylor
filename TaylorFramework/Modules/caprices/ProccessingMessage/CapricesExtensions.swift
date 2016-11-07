@@ -8,7 +8,7 @@
 
 import Foundation
 
-let defaultErrorDictionary = [ResultDictionaryErrorKey : [String.Empty]]
+let defaultErrorDictionary = [ResultDictionaryErrorKey : [""]]
 
 extension Int {
     var isEven: Bool { return self % 2 == 0 }
@@ -47,17 +47,15 @@ extension Array {
 }
 
 extension Array where Element: StringType {
-    
     var containFlags: Bool {
         return self.count == 2 && Flags.contains(String(describing: self[1]))
-    }
-    
+    }    
 }
 
 extension FileManager {
     func isDirectory(_ path: String) -> Bool {
         var isDirectory = ObjCBool(false)
-        self.fileExists(atPath: path, isDirectory: &isDirectory)
+        fileExists(atPath: path, isDirectory: &isDirectory)
         return isDirectory.boolValue
     }
 }

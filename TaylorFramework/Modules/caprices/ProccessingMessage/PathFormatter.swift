@@ -19,14 +19,14 @@ private let RecursiveSymbol = "*"
 extension Path {
     
     func lastComponentFromPath() -> String {
-        if self.isEmpty { return String.Empty }
+        if self.isEmpty { return "" }
         let pathComponents = self.components(separatedBy: FilePath.Separator)
         return pathComponents.last! // Safe to force unwrap
     }
     
     
     func absolutePath(_ analyzePath: String = FileManager.default.currentDirectoryPath) -> Path {
-        if self.hasPrefix(TildeSymbol) { return NSHomeDirectory() + self.replacingOccurrences(of: TildeSymbol, with: String.Empty) }
+        if self.hasPrefix(TildeSymbol) { return NSHomeDirectory() + self.replacingOccurrences(of: TildeSymbol, with: "") }
         if self.hasPrefix(FilePath.Separator) { return self }
         let concatenatedPaths = analyzePath + FilePath.Separator + self
         
@@ -36,7 +36,7 @@ extension Path {
     
     func formattedExcludePath(_ analyzePath: String = FileManager.default.currentDirectoryPath) -> Path {
         if self.hasPrefix(SearchIndicator) && self.hasSuffix(SearchIndicator) { return self }
-        if containsSymbolAsPrefixOrSuffix(SearchIndicator) { return String.Empty }
+        if containsSymbolAsPrefixOrSuffix(SearchIndicator) { return "" }
 
         return self.absolutePath(analyzePath)
     }
@@ -71,7 +71,7 @@ extension Path {
     
     fileprivate func checkLastPathComponentsElement(_ pathComponents: inout [String]) {
         if pathComponents.isEmpty { return }
-        if [String.Empty, RecursiveSymbol].contains(pathComponents.last!) {
+        if ["", RecursiveSymbol].contains(pathComponents.last!) {
             pathComponents.removeLast()
         }
     }

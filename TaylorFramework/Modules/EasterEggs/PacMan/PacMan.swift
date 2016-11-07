@@ -50,8 +50,12 @@ final class Pacman {
     }
     
     func getGamePath() -> String {
-        let path =  Bundle(for: type(of: self)).path(forResource: "pacman", ofType: "py")
-        return ((path ?? "") as NSString).deletingLastPathComponent
+        guard let path =  Bundle(for: type(of: self)).path(forResource: "pacman", ofType: "py") else {
+            print("Can't find game path for Easter Egg :o")
+            return ""
+        }
+        
+        return (path as NSString).deletingLastPathComponent
     }
     
     /**
@@ -110,7 +114,7 @@ struct Generator {
         var pathsGenerator = paths.shuffle().makeIterator()
         let charNumber = countWallCharacters()
         while let path = pathsGenerator.next() {
-            if let file = File(path: path) , charNumber < file.contents.characters.count {
+            if let file = File(path: path), charNumber < file.contents.characters.count {
                 return file.contents
             }
         }

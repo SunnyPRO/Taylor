@@ -87,7 +87,7 @@ class MessageProcessor {
 
     func defaultExcludesFilePathForDictionary(_ dictionary: Options) -> String {
         guard let pathKey = dictionary[ResultDictionaryPathKey] , !pathKey.isEmpty else {
-            return String.Empty
+            return ""
         }
         return pathKey.first! + DefaultExcludesFile
     }

@@ -20,7 +20,7 @@ class PacmanRunner {
     
     func runEasterEggIfNeeded(_ userInput: String) {
         if userInput.uppercased() == "Y" {
-            let paths = filePathsForPath(currentPath)
+            let paths = filePaths(for: currentPath)
             runEasterEgg(paths)
         } else {
             printer.printError("O Kay! Next time :)")
@@ -42,7 +42,7 @@ class PacmanRunner {
         pacman.start()
     }
     
-    func filePathsForPath(_ path: Path) -> [Path] {
+    func filePaths(for path: Path) -> [Path] {
         let parameters = ["path": [currentPath], "type": ["swift"]]
         return Finder().findFilePaths(parameters: parameters)
     }

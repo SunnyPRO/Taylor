@@ -16,7 +16,7 @@ struct ExcludeOption: ExecutableOption {
     var optionArgument: Path
     let name = "ExcludeOption"
     
-    init(argument: Path = String.Empty) {
+    init(argument: Path = "") {
         optionArgument = argument
     }
     
