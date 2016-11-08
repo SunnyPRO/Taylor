@@ -16,7 +16,14 @@ extension ComponentType {
 //MARK: SwiftXPC extensions
 
 protocol StringType {}
-extension String: StringType {}
+extension String: StringType {
+        func substring(with r: Range<Int>) -> String {
+            let start = self.index(self.startIndex, offsetBy: r.lowerBound)
+            let end = self.index(self.startIndex, offsetBy: r.upperBound)
+            
+            return self[start...end]
+        }
+}
 
 extension SourceKitRepresentable {
     var dictionaryValue: [String: SourceKitRepresentable] {

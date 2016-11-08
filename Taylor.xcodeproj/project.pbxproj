@@ -144,6 +144,7 @@
 		9475A3231DC8EF630081695B /* TaylorFramework.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9475A3241DC8F2DA0081695B /* SWXMLHash.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9475A3281DC8F32F0081695B /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; };
+		94972FDE1DD232DD004625F1 /* PropertyComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94972FDD1DD232DD004625F1 /* PropertyComponents.swift */; };
 		94A444B71DC74B0600D9C6D5 /* SWXMLHash.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */; };
 		94A444B81DC74B0600D9C6D5 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94A444B51DC74B0600D9C6D5 /* Yaml.framework */; };
 		94A444BC1DC75FF600D9C6D5 /* TaylorFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69B4DC891BED1BD3005EA7D5 /* TaylorFramework.framework */; };
@@ -431,6 +432,7 @@
 		942DFDE51DCC8BC600200014 /* SwiftDocKey+Taylor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftDocKey+Taylor.swift"; sourceTree = "<group>"; };
 		947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExcludesFileReader.framework; sourceTree = "<group>"; };
 		9475A3261DC8F3200081695B /* TaylorFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TaylorFramework; sourceTree = "<group>"; };
+		94972FDD1DD232DD004625F1 /* PropertyComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyComponents.swift; sourceTree = "<group>"; };
 		94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = "<group>"; };
 		94A444B51DC74B0600D9C6D5 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Yaml.framework; sourceTree = "<group>"; };
 		A327502D1C62835900F7DFA2 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
@@ -666,6 +668,7 @@
 				69B4DC1D1BED169B005EA7D5 /* Scissors.swift */,
 				69B4DC1E1BED169B005EA7D5 /* ScissorsExtensions.swift */,
 				69B4DC1F1BED169B005EA7D5 /* Tree.swift */,
+				94972FDD1DD232DD004625F1 /* PropertyComponents.swift */,
 			);
 			name = Scissors;
 			path = scissors;
@@ -1292,6 +1295,7 @@
 				69B4DCB61BED1C2D005EA7D5 /* ExtendedComponent.swift in Sources */,
 				69B4DCB81BED1C2D005EA7D5 /* Scissors.swift in Sources */,
 				FF5DF6A61CBD23CD00768DFE /* ExtendedComponentExtensions.swift in Sources */,
+				94972FDE1DD232DD004625F1 /* PropertyComponents.swift in Sources */,
 				69B4DCB91BED1C2D005EA7D5 /* ScissorsExtensions.swift in Sources */,
 				69B4DCBA1BED1C2D005EA7D5 /* Tree.swift in Sources */,
 				69B4DCBB1BED1C2D005EA7D5 /* ComponentExtensions.swift in Sources */,
