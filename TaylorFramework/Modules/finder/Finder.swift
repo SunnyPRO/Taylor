@@ -21,10 +21,9 @@ final class Finder {
     
     func findFilePaths(parameters dictionary: Options) -> [String] {
         parameters = Parameters(dictionary: dictionary, printer: printer)
-        guard let _ = parameters.flatMap({ self.validateParameters($0) }),
-              let validParams = parameters else {
-            return []
-        }
+        guard let validParams = parameters,
+              validateParameters(validParams) else { return [] }
+        
         _ = validParams.rootPath.deleteSuffix(FilePath.Separator)
         excludes = validParams.excludes.deleteRootPath(validParams.rootPath)
         let pathsFromDirectory = findPathsInDirectory(validParams.rootPath)
@@ -40,7 +39,10 @@ final class Finder {
         do {
             let pathsInDirectory = try fileManager.subpathsOfDirectory(atPath: path)
             let paths = exclude(excludes, fromPaths: pathsInDirectory)
-            return paths.map { absolutePath(parameters!.rootPath, fileName: $0) }
+            guard let parameters = parameters else {
+                print("Incorrect parameters!")
+                return [] }
+            return paths.map { absolutePath(parameters.rootPath, fileName: $0) }
         } catch _ {
             printer.printSubpathsError(directoryPath: path)
             return []
@@ -48,7 +50,10 @@ final class Finder {
     }
     
     fileprivate func exclude(_ excludes: [FilePath], fromPaths files: [FilePath]) -> [FilePath] {
-        return files.keepPathsMatchingType(parameters!.type)
+        guard let parameters = parameters else {
+            print("Incorrect parameters!")
+            return [] }
+        return files.keepPathsMatchingType(parameters.type)
             .excludePathsContainingSubpathsInArray(excludes)
     }
     
@@ -59,7 +64,8 @@ final class Finder {
                 return false
             }
             
-            guard filePath.isKindOfType(parameters!.type) else {
+            guard let parameters = parameters,
+                filePath.isKindOfType(parameters.type) else {
                 printer.printWrongFileTypeError(filePath: filePath)
                 return false
             }
@@ -80,7 +86,10 @@ final class Finder {
     }
     
     fileprivate func directoryExistsAtPath(_ path: FilePath) -> Bool {
-        let rootPath = parameters!.rootPath
+        guard let parameters = parameters else {
+            print("Incorrect parameters!")
+            return false }
+        let rootPath = parameters.rootPath
         return fileManager.fileExists(atPath: path) && fileManager.isDirectory(rootPath)
     }
     

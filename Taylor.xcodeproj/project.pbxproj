@@ -137,7 +137,6 @@
 		69EA54F91BEE209C007713A6 /* Taylor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69EA54F81BEE209C007713A6 /* Taylor.swift */; };
 		9415BBE41DCCBD930010A813 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415BBE31DCCBD930010A813 /* SourceKittenFramework.framework */; };
 		9415BBE51DCCBD930010A813 /* SourceKittenFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9415BBE31DCCBD930010A813 /* SourceKittenFramework.framework */; };
-		942DFDE61DCC8BC600200014 /* SwiftDocKey+Taylor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942DFDE51DCC8BC600200014 /* SwiftDocKey+Taylor.swift */; };
 		947250C51DBA1C1600AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
 		947250C61DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
 		947250C71DBA1C2200AF6A26 /* ExcludesFileReader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */; };
@@ -153,8 +152,8 @@
 		A32750301C62835900F7DFA2 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; };
 		A32750311C62835900F7DFA2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A327502E1C62835900F7DFA2 /* Quick.framework */; };
 		A32750321C62835900F7DFA2 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A327502E1C62835900F7DFA2 /* Quick.framework */; };
-		A32750331C62836200F7DFA2 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A32750341C62836200F7DFA2 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = A327502E1C62835900F7DFA2 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A32750331C62836200F7DFA2 /* Nimble.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A32750341C62836200F7DFA2 /* Quick.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A327502E1C62835900F7DFA2 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A32750351C62836600F7DFA2 /* Nimble.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A327502D1C62835900F7DFA2 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A32750361C62836600F7DFA2 /* Quick.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = A327502E1C62835900F7DFA2 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B10CAD761C4FC5E500769323 /* Exceptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10CAD751C4FC5E500769323 /* Exceptions.swift */; };
@@ -207,15 +206,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		542EF26B1C076F8E004C7477 /* CopyFiles */ = {
+		542EF26B1C076F8E004C7477 /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A32750331C62836200F7DFA2 /* Nimble.framework in CopyFiles */,
-				A32750341C62836200F7DFA2 /* Quick.framework in CopyFiles */,
+				A32750331C62836200F7DFA2 /* Nimble.framework in Copy Files */,
+				A32750341C62836200F7DFA2 /* Quick.framework in Copy Files */,
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		692FCBEF1BED2DD400DB5F16 /* Copy Frameworks */ = {
@@ -429,9 +429,7 @@
 		9410B72E1DBA053F00F6050E /* SourceKitten.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SourceKitten.h; sourceTree = "<group>"; };
 		9410B72F1DBA053F00F6050E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9415BBE31DCCBD930010A813 /* SourceKittenFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SourceKittenFramework.framework; sourceTree = "<group>"; };
-		942DFDE51DCC8BC600200014 /* SwiftDocKey+Taylor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftDocKey+Taylor.swift"; sourceTree = "<group>"; };
 		947250C41DBA1C1600AF6A26 /* ExcludesFileReader.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ExcludesFileReader.framework; sourceTree = "<group>"; };
-		9475A3261DC8F3200081695B /* TaylorFramework */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TaylorFramework; sourceTree = "<group>"; };
 		94972FDD1DD232DD004625F1 /* PropertyComponents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PropertyComponents.swift; sourceTree = "<group>"; };
 		94A444B41DC74B0600D9C6D5 /* SWXMLHash.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SWXMLHash.framework; sourceTree = "<group>"; };
 		94A444B51DC74B0600D9C6D5 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Yaml.framework; sourceTree = "<group>"; };
@@ -767,7 +765,6 @@
 				69B4DC3E1BED169B005EA7D5 /* Timer.swift */,
 				69B4DC3F1BED169B005EA7D5 /* Version.swift */,
 				69517A191BF25C31000B3F1B /* CLIReporter.swift */,
-				942DFDE51DCC8BC600200014 /* SwiftDocKey+Taylor.swift */,
 			);
 			name = Taylor;
 			path = ../Taylor;
@@ -953,14 +950,6 @@
 			path = SourceKitten;
 			sourceTree = "<group>";
 		};
-		9475A3251DC8F31F0081695B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				9475A3261DC8F3200081695B /* TaylorFramework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		A327502C1C62833600F7DFA2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -980,7 +969,6 @@
 				692FCBF01BED2E2A00DB5F16 /* Resources */,
 				9410B72D1DBA053F00F6050E /* SourceKitten */,
 				A36B2EF71B98244F0049F590 /* Products */,
-				9475A3251DC8F31F0081695B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1109,7 +1097,7 @@
 				542EF25C1C076F7F004C7477 /* Sources */,
 				542EF25D1C076F7F004C7477 /* Frameworks */,
 				542EF25E1C076F7F004C7477 /* Resources */,
-				542EF26B1C076F8E004C7477 /* CopyFiles */,
+				542EF26B1C076F8E004C7477 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -1335,7 +1323,6 @@
 				69B4DCA41BED1C00005EA7D5 /* PathOption.swift in Sources */,
 				69B4DCA51BED1C00005EA7D5 /* ReporterOption.swift in Sources */,
 				69B4DCA61BED1C00005EA7D5 /* RuleCustomizationOption.swift in Sources */,
-				942DFDE61DCC8BC600200014 /* SwiftDocKey+Taylor.swift in Sources */,
 				69B4DCA71BED1C00005EA7D5 /* TypeOption.swift in Sources */,
 				69B4DCA81BED1C00005EA7D5 /* VerbosityOption.swift in Sources */,
 				69517A1A1BF25C31000B3F1B /* CLIReporter.swift in Sources */,

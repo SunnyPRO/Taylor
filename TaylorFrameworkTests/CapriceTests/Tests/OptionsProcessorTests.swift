@@ -262,19 +262,19 @@ class OptionsProcessorTests: QuickSpec {
                     
                     it("should set default values only for keys that was not indicated") {
                         var dictionary = [ResultDictionaryTypeKey : ["someType"]]
-                        optionsProcessor.setDefaultValuesToResultDictionary(dictionary: &dictionary)
+                        optionsProcessor.setDefaultValuesToResultDictionary(&dictionary)
                         expect(dictionary == [ResultDictionaryPathKey : [currentPath], ResultDictionaryTypeKey : ["someType"]]).to(beTrue())
                     }
                     
                     it("should set default values for dictionary") {
                         var dictionary = Options()
-                        optionsProcessor.setDefaultValuesToResultDictionary(dictionary: &dictionary)
+                        optionsProcessor.setDefaultValuesToResultDictionary(&dictionary)
                         expect(dictionary == [ResultDictionaryPathKey : [currentPath], ResultDictionaryTypeKey : [DefaultExtensionType]]).to(beTrue())
                     }
                     
                     it("should not change values if they are already setted") {
                         var dictionary = [ResultDictionaryPathKey : ["SomePath"], ResultDictionaryTypeKey : ["SomeExtension"]]
-                        optionsProcessor.setDefaultValuesToResultDictionary(dictionary: &dictionary)
+                        optionsProcessor.setDefaultValuesToResultDictionary(&dictionary)
                         expect(dictionary == [ResultDictionaryPathKey : ["SomePath"], ResultDictionaryTypeKey : ["SomeExtension"]]).to(beTrue())
                     }
                     
@@ -282,7 +282,7 @@ class OptionsProcessorTests: QuickSpec {
                         let pathToExcludesFile = MockFileManager().testFile("excludes", fileType: "yml")
                         let pathToExcludesFileRootFolder = pathToExcludesFile.replacingOccurrences(of: "/excludes.yml", with: "")
                         var dictionary = [ResultDictionaryPathKey : [pathToExcludesFileRootFolder]]
-                        optionsProcessor.setDefaultValuesToResultDictionary(dictionary: &dictionary)
+                        optionsProcessor.setDefaultValuesToResultDictionary(&dictionary)
                         let resultsArrayOfExcludes = ["file.txt".formattedExcludePath(pathToExcludesFileRootFolder), "path/to/file.txt".formattedExcludePath(pathToExcludesFileRootFolder), "folder".formattedExcludePath(pathToExcludesFileRootFolder), "path/to/folder".formattedExcludePath(pathToExcludesFileRootFolder)]
                         expect(dictionary == [ResultDictionaryPathKey : [pathToExcludesFileRootFolder], ResultDictionaryTypeKey : [DefaultExtensionType], ResultDictionaryExcludesKey : resultsArrayOfExcludes]).to(beTrue())
                     }
@@ -293,49 +293,21 @@ class OptionsProcessorTests: QuickSpec {
     }
 }
 
-
-//TODO: Check if overload == operators are the best choice
-func ==(lhs: [String: String], rhs: [String: String]) -> Bool {
-    if lhs.count != rhs.count { return false }
-    
-    for (key, lhsub) in lhs {
-        if let rhsub = rhs[key] {
-            if lhsub != rhsub {
-                return false
-            }
-        } else {
+func ==<U: Hashable, T: Sequence>(lhs: [U: T], rhs: [U: T]) -> Bool where T.Iterator.Element: Equatable {
+    guard lhs.count == rhs.count else { return false }
+    for (key, lValue) in lhs {
+        guard let rValue = rhs[key], Array(lValue) == Array(rValue) else {
             return false
         }
     }
-    
     return true
 }
 
-func ==(lhs: [String: [String]], rhs: [String: [String]]) -> Bool {
-    if lhs.count != rhs.count { return false }
-    
-    for (key, lhsub) in lhs {
-        if let rhsub = rhs[key] {
-            if lhsub != rhsub {
-                return false
-            }
-        } else {
-            return false
-        }
+func ==<T: Hashable, U: Equatable>(lhs: [[T: U]], rhs: [[T: U]]) -> Bool {
+    guard lhs.count == rhs.count else { return false }
+    for (index, dictionary) in lhs.enumerated() {
+        if dictionary != rhs[index] { return false }
     }
-    
-    return true
-}
-
-func ==(lhs: [[String: String]], rhs: [[String: String]]) -> Bool {
-    if lhs.count != rhs.count { return false }
-    
-    for index in 0..<lhs.count {
-        if lhs[index] != rhs[index] {
-            return false
-        }
-    }
-    
     return true
 }
 

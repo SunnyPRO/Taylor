@@ -19,9 +19,8 @@ private let RecursiveSymbol = "*"
 extension Path {
     
     func lastComponentFromPath() -> String {
-        if self.isEmpty { return "" }
-        let pathComponents = self.components(separatedBy: FilePath.Separator)
-        return pathComponents.last! // Safe to force unwrap
+        guard let lastPathComponent = self.components(separatedBy: FilePath.Separator).last else { return ""}
+        return lastPathComponent
     }
     
     
@@ -70,8 +69,8 @@ extension Path {
     
     
     fileprivate func checkLastPathComponentsElement(_ pathComponents: inout [String]) {
-        if pathComponents.isEmpty { return }
-        if ["", RecursiveSymbol].contains(pathComponents.last!) {
+        guard let lastPathComponent = pathComponents.last else { return }
+        if ["", RecursiveSymbol].contains(lastPathComponent) {
             pathComponents.removeLast()
         }
     }

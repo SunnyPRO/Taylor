@@ -11,9 +11,9 @@ import Foundation
 extension ExtendedComponent {
     
     /**
-        Recursively applies *block* over each node in tree starting
-        from a level deeper.
-    */
+     Recursively applies *block* over each node in tree starting
+     from a level deeper.
+     */
     func forEach(_ block: (ExtendedComponent) -> ()) {
         components.forEach {
             block($0)
@@ -22,9 +22,9 @@ extension ExtendedComponent {
     }
     
     /**
-        Recursively applies *block* over each node in tree starting
-        from the end of tree.
-    */
+     Recursively applies *block* over each node in tree starting
+     from the end of tree.
+     */
     func forEachReversed(_ block: (ExtendedComponent) -> ()) {
         components.forEach { $0.forEachReversed(block) }
         block(self)
@@ -40,13 +40,14 @@ extension ExtendedComponent {
     
     var isCorrectParameter: Bool {
         guard isA(.parameter) else { return true }
-        guard name != nil else { return true }
-        let startsWithDollar = name![name!.startIndex] == "$"
+        guard let name = name else { return true }
+        let startsWithDollar = name[name.startIndex] == "$"
         
-        if typeName == nil {
+        if typeName != nil {
             return !startsWithDollar || parent!.isA(.closure)
         } else {
-            return (!startsWithDollar && name != typeName) || parent!.isA(.closure)
+            guard let parent = parent else { return false }
+            return (!startsWithDollar && name != typeName) || parent.isA(.closure)
         }
     }
     
@@ -66,7 +67,8 @@ extension ExtendedComponent {
         guard self.components.count > 0 else {
             return false
         }
-        return self.components[0].type == .brace
+        
+        return self.components.first?.type == .brace
     }
     
     func insert(_ components: [ExtendedComponent]) {
@@ -82,22 +84,24 @@ extension ExtendedComponent {
     }
     
     func changeChildToParent(_ index: Int) {
-        _ = parent?.addChild(components[index])
+        parent?.addChild(components[index])
         components.remove(at: index)
     }
     
     func takeChildrenOfChild(_ index: Int) {
         for child in components[index].components {
-            _ = addChild(child)
+            addChild(child)
         }
     }
     
+    @discardableResult
     func addChild(_ child: ExtendedComponent) -> ExtendedComponent {
         self.components.append(child)
         child.parent = self
         return child
     }
     
+    @discardableResult
     func addChild(_ type: ComponentType, range: OffsetRange, name: String? = nil) -> ExtendedComponent {
         let child = ExtendedComponent(type: type, range: range, names: (name, nil))
         child.parent = self
@@ -117,10 +121,10 @@ extension ExtendedComponent {
                 return
             } else if node.contains(child) {
                 remove(child)
-                _ = node.addChild(child)
+                node.addChild(child)
             }
         }
-        _ = self.addChild(node)
+        self.addChild(node)
     }
     
     func processParameters() {
@@ -128,9 +132,9 @@ extension ExtendedComponent {
             if isA(.parameter) && child.isA(.parameter) {
                 if offsetRange == child.offsetRange {
                     remove(child)
-                    _ = parent?.addChild(child)
+                    parent?.addChild(child)
                 } else {
-                    _ = parent?.addChild(child)
+                    parent?.addChild(child)
                     parent?.remove(self)
                     child.processParameters()
                     break

@@ -53,7 +53,7 @@ struct InformationalOptionsFactory {
             $0 as! VerbosityOption
         }
         guard verbosityOptions.count == 1 else {
-            return VerbosityLevel.error
+            return .error
         }
         return verbosityOptions[0].verbosityLevelFromOption()
     }

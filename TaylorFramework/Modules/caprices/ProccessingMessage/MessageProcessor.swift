@@ -42,8 +42,8 @@ class MessageProcessor {
     func processMultipleArguments(_ arguments: [String]) throws -> Options {
         if arguments.count.isOdd {
             return try optionsProcessor.processOptions(arguments: arguments)
-        } else if arguments.containFlags {
-            FlagBuilder().flag(arguments.second!).execute() //Safe to force unwrap
+        } else if let secondArg = arguments.second, arguments.containFlags {
+            FlagBuilder().flag(secondArg).execute()
             exit(0)
         }
         errorPrinter.printError("\nInvalid options was indicated")
@@ -74,8 +74,9 @@ class MessageProcessor {
         }
         do {
             let defaultExcludesFilePath = defaultExcludesFilePathForDictionary(dictionary)
+            guard let firstPathKey = pathKey.first else { return }
             let excludePaths = try excludeFileReader.absolutePathsFromExcludesFile(defaultExcludesFilePath,
-                                    forAnalyzePath: pathKey.first!)
+                                    forAnalyzePath: firstPathKey)
             if !excludePaths.isEmpty {
                 dictionary[ResultDictionaryExcludesKey] = excludePaths
             }
@@ -86,10 +87,10 @@ class MessageProcessor {
     
 
     func defaultExcludesFilePathForDictionary(_ dictionary: Options) -> String {
-        guard let pathKey = dictionary[ResultDictionaryPathKey] , !pathKey.isEmpty else {
+        guard let firstPathKey = dictionary[ResultDictionaryPathKey]?.first else {
             return ""
         }
-        return pathKey.first! + DefaultExcludesFile
+        return firstPathKey + DefaultExcludesFile
     }
     
     

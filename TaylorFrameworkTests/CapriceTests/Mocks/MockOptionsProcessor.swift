@@ -11,7 +11,7 @@ import ExcludesFileReader
 
 class MockOptionsProcessor: OptionsProcessor {
     
-    override func setDefaultValuesToResultDictionary(dictionary: inout Options) {
+    override func setDefaultValuesToResultDictionary(_ dictionary: inout Options) {
         setDefaultPathAndTypeToDictionary(&dictionary)
         if !isExcludesFileIndicated { setDefaultExcludesToDictionary(&dictionary) }
     }

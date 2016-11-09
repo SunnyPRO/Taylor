@@ -11,8 +11,8 @@ import Nimble
 import TaylorFramework
 
 enum IntegrationTestsError: Error {
-    case fileNotFount(String)
-    case bundleResourceNotFount(String)
+    case fileNotFound(String)
+    case bundleResourceNotFound(String)
 }
 
 class TaylorIntegrationTests: QuickSpec {
@@ -46,7 +46,7 @@ class TaylorIntegrationTests: QuickSpec {
             analyzeFilesPath = resourcesPath.stringByAppendingPathComponent("AnalyzeFiles")
             resultFilePath = resourcesPath.stringByAppendingPathComponent("Result")
         } else {
-            throw IntegrationTestsError.bundleResourceNotFount(mainBundle.bundlePath)
+            throw IntegrationTestsError.bundleResourceNotFound(mainBundle.bundlePath)
         }
     }
     
@@ -63,7 +63,7 @@ class TaylorIntegrationTests: QuickSpec {
             try createFiles(bundle)
             try createResultFile(bundle)
         } else {
-            throw IntegrationTestsError.bundleResourceNotFount("TaylorIntegrationTestResources")
+            throw IntegrationTestsError.bundleResourceNotFound("TaylorIntegrationTestResources")
         }
     }
     
@@ -73,7 +73,7 @@ class TaylorIntegrationTests: QuickSpec {
             if let path = sourceBundle.path(forResource: fileName.stringByTrimmingTheExtension, ofType: fileName.fileExtension) {
                 try FileManager.default.copyItem(atPath: path, toPath: self.analyzeFilesPath.stringByAppendingPathComponent(path.lastPathComponent))
             } else {
-                throw IntegrationTestsError.bundleResourceNotFount("fileName")
+                throw IntegrationTestsError.bundleResourceNotFound("fileName")
             }
         }
     }
@@ -84,7 +84,7 @@ class TaylorIntegrationTests: QuickSpec {
             resultFilePath = resultFilePath.stringByAppendingPathComponent(resultFileName)
             try FileManager.default.copyItem(atPath: path, toPath: self.resultFilePath)
         } else {
-            throw IntegrationTestsError.bundleResourceNotFount(resultFileName)
+            throw IntegrationTestsError.bundleResourceNotFound(resultFileName)
         }
     }
     

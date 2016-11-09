@@ -20,9 +20,9 @@ func componentsForArrayComponents() -> ExtendedComponent {
     let rootComponent = ExtendedComponent(type: ComponentType.class, range: OffsetRange(start: 0, end: 11))
     let classComponent = rootComponent.addChild(ComponentType.class, range: OffsetRange(start: 1, end: 8))
     let funcComponent = classComponent.addChild(ComponentType.function, range: OffsetRange(start: 2, end: 4))
-    _ = funcComponent.addChild(ComponentType.emptyLines, range: OffsetRange(start: 3, end: 3))
-    _ = classComponent.addChild(ComponentType.comment, range: OffsetRange(start: 5, end: 7))
-    _ = rootComponent.addChild(ComponentType.function, range: OffsetRange(start: 9, end: 10))
+    funcComponent.addChild(ComponentType.emptyLines, range: OffsetRange(start: 3, end: 3))
+    classComponent.addChild(ComponentType.comment, range: OffsetRange(start: 5, end: 7))
+    rootComponent.addChild(ComponentType.function, range: OffsetRange(start: 9, end: 10))
     
     return rootComponent
 }
