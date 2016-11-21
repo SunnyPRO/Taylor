@@ -21,7 +21,8 @@ extension ComponentRange : Serialization, Deserialization {
     typealias `Type` = ComponentRange
     
     func serialize() -> [String:AnyObject] {
-        return ["startLine" : startLine as AnyObject, "endLine" : endLine as AnyObject]
+        return ["startLine" : NSNumber.init(value: startLine) as AnyObject,
+                "endLine" : NSNumber.init(value: endLine) as AnyObject]
     }
     
     static func deserialize(_ dictionary: [String:AnyObject]) -> ComponentRange? {

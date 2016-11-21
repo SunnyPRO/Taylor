@@ -82,7 +82,7 @@ struct Tree {
             let regex = try NSRegularExpression(pattern: "\\\".*?\\\"", options: [.dotMatchesLineSeparators])
             return text.filter { !$0.isEmpty }.reduce("") {
                 let matchRanges = regex.matches(in: $1, options: [], range: NSMakeRange(0, $1.characters.count)).map { $0.range }
-                return $0 + ($1 as NSString).stringByReplacingCharactersInRangesWithSpaces(matchRanges) + "\n"
+                return $0 + NSString.init(string: $1).stringByReplacingCharactersInRangesWithSpaces(matchRanges) + "\n"
             }
         } catch { return "" }
     }
@@ -91,7 +91,7 @@ struct Tree {
 extension NSString {
     func stringByReplacingCharactersInRangesWithSpaces(_ ranges: [NSRange]) -> String {
         var string = self
-        ranges.forEach { string = string.replacingCharacters(in: $0, with: " " * $0.length) as NSString }
-        return string as String
+        ranges.forEach { string = NSString.init(string: string.replacingCharacters(in: $0, with: " " * $0.length)) }
+        return String(describing: string)
     }
 }

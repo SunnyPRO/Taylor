@@ -37,20 +37,20 @@ struct Violation {
     
     func toDictionary() -> Dictionary<String, AnyObject> {
         var violationDictionary = Dictionary<String, AnyObject>()
-        violationDictionary["path"] = path as AnyObject?
-        violationDictionary["rule"] = rule.rule as AnyObject?
-        violationDictionary["message"] = message as AnyObject?
-        violationDictionary["priority"] = rule.priority as AnyObject?
+        violationDictionary["path"] = NSString(string: path) as AnyObject
+        violationDictionary["rule"] = NSString(string: rule.rule) as AnyObject
+        violationDictionary["message"] = NSString(string: message) as AnyObject
+        violationDictionary["priority"] = NSNumber(value: rule.priority) as AnyObject
         if let classComponent = component.classComponent() {
             if let name = classComponent.name {
-                violationDictionary["class"] = name as AnyObject?
+                violationDictionary["class"] = NSString(string: name) as AnyObject
             }
         }
         if component.type == .function {
-            violationDictionary["method"] = component.name as AnyObject?
+            violationDictionary["method"] = NSString(string: component.name ?? "") as AnyObject?
         }
-        violationDictionary["value"] = value as AnyObject?
-        violationDictionary["externalInfoUrl"] = rule.externalInfoUrl as AnyObject?
+        violationDictionary["value"] = NSNumber(value: value) as AnyObject?
+        violationDictionary["externalInfoUrl"] = NSString(string: rule.externalInfoUrl) as AnyObject?
         violationDictionary += component.range.serialize()
         return violationDictionary
     }

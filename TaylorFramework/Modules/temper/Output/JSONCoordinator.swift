@@ -33,7 +33,8 @@ struct JSONCoordinator: WritingCoordinator {
 
 extension FileManager {
     func removeFileAtPath(_ path: String) {
-        var isDirectory: ObjCBool = false
+        var isDirectory = ObjCBool(false)
+
         if !FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) && !isDirectory.boolValue { return }
         do {
             try FileManager.default.removeItem(atPath: path)

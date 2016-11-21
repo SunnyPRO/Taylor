@@ -64,7 +64,7 @@ struct ComponentFinder {
         return syntaxMap.tokens.filter {
             componentTypeUIDs[$0.type] == .comment
             }.reduce([ExtendedComponent]()) {
-                $0 + ExtendedComponent(dict: $1.dictionaryValue as [String : AnyObject])
+                $0 + ExtendedComponent(dict: $1.dictionaryValue)
         }
     }
     

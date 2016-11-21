@@ -55,7 +55,7 @@ final class Pacman {
             return ""
         }
         
-        return (path as NSString).deletingLastPathComponent
+        return NSString.init(string: path).deletingLastPathComponent
     }
     
     /**
@@ -99,7 +99,7 @@ struct Generator {
     
     func generateMapString(_ text: String) -> String? {
         if text.isEmpty || text.characters.count < mapString.characters.count { return nil }
-        let endIndex = mapString.characters.count + Int(arc4random_uniform(UInt32(text.characters.count - mapString.characters.count)))
+        let endIndex = mapString.characters.count + randomInt(text.characters.count - mapString.characters.count)
         let textRange = text.characters.index(text.startIndex, offsetBy: endIndex - mapString.characters.count)..<text.characters.index(text.startIndex, offsetBy: endIndex)
         var charactersGenerator = text.substring(with: textRange).characters.makeIterator()
         let restrictedChars = [PLAYER, GHOST, "\n", POINT]

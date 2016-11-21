@@ -55,7 +55,7 @@ extension Array where Element: StringType {
 extension FileManager {
     func isDirectory(_ path: String) -> Bool {
         var isDirectory = ObjCBool(false)
-        fileExists(atPath: path, isDirectory: &isDirectory)
+        _ = fileExists(atPath: path, isDirectory: &isDirectory)
         return isDirectory.boolValue
     }
 }

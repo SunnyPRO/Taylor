@@ -280,7 +280,7 @@ class TestsHelper {
         let depth = 10
         func makeComponent(_ component: Component, depth: Int) {
             let admisibleComponents = [ComponentType.if, ComponentType.while, ComponentType.for, ComponentType.case, ComponentType.brace]
-            let type = admisibleComponents[Int(arc4random_uniform(5))]
+            let type = admisibleComponents[randomInt(5)]
             let component1 = component.makeComponent(type: type, range: ComponentRange(sl: 0, el: 0))
             let decrementedDepth = depth - 1
             if decrementedDepth > 0 {

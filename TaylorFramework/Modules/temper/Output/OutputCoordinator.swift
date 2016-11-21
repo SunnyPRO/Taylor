@@ -20,7 +20,7 @@ final class OutputCoordinator {
         self.reporters = reporters
         for reporter in reporters {
             if reporter.fileName.isEmpty && (reporter.concreteReporter as? XcodeReporter) == nil { continue }
-            let path = (filePath as NSString).appendingPathComponent(reporter.fileName)
+            let path = NSString.init(string: filePath).appendingPathComponent(reporter.fileName)
             reporter.coordinator().writeViolations(violations, atPath: path)
         }
     }

@@ -17,12 +17,25 @@ extension ComponentType {
 
 protocol StringType {}
 extension String: StringType {
-        func substring(with r: Range<Int>) -> String {
-            let start = self.index(self.startIndex, offsetBy: r.lowerBound)
-            let end = self.index(self.startIndex, offsetBy: r.upperBound)
-            
-            return self[start...end]
-        }
+    func characterOn(_ index: Int) -> Character {
+        return self[self.index(self.startIndex, offsetBy: index)]
+    }
+    
+    func substring(with i: Int) -> String {
+        return String(self.characterOn(i))
+    }
+    
+    func substring(from i: Int) -> String {
+        let range: Range = i..<self.characters.count
+        return substring(with: range)
+    }
+    
+    func substring(with r: Range<Int>) -> String {
+        let start = self.index(self.startIndex, offsetBy: r.lowerBound)
+        let end = self.index(self.startIndex, offsetBy: r.upperBound)
+        
+        return self[start..<end]
+    }
 }
 
 extension SourceKitRepresentable {
@@ -96,12 +109,12 @@ extension Double {
 //MARK: Operators overloading
 
 /**
-Returns new string consisting of rhs copies of lhs concatenated.
-
-- parameter lhs: string to be repeated.
-
-- parameter rhs: number of times of *lhs* to be concatenated.
-*/
+ Returns new string consisting of rhs copies of lhs concatenated.
+ 
+ - parameter lhs: string to be repeated.
+ 
+ - parameter rhs: number of times of *lhs* to be concatenated.
+ */
 func *(lhs: String, rhs: Int) -> String {
     return (0..<rhs).reduce("") { (string, _) in string + lhs }
 }
@@ -135,7 +148,7 @@ extension MutableCollection where Index == Int {
         if count < 2 { return }
         
         for i in startIndex ..< endIndex - 1 {
-            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+            let j = randomInt(endIndex - i) + i
             guard i != j else { continue }
             swap(&self[i], &self[j])
         }

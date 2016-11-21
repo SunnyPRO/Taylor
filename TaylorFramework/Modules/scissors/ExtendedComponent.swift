@@ -41,7 +41,7 @@ final class ExtendedComponent {
         self.names = names
     }
     
-    init(dict: [String: AnyObject]) {
+    init(dict: [String: Any]) {
         if let type = dict["type"] as? String,
             let startOffset = dict["offset"] as? Int,
             let length = dict["length"] as? Int {
@@ -73,8 +73,7 @@ final class ExtendedComponent {
             _ = child.appendComponents(hashedStructure.substructure, components: components)
         }
         
-        // Safe to unwrap, all objects are `ExtendedComponent`
-        return components as NSArray as! [ExtendedComponent]
+        return NSArray.init(array: components) as! [ExtendedComponent]
     }
     
     func getComponentType(_ type: String, bracesCount: Int, isLast: Bool) -> ComponentType {
@@ -155,3 +154,6 @@ extension ExtendedComponent {
         forEach { $0.parent?.components.sort { $0.offsetRange < $1.offsetRange } }
     }
 }
+
+
+

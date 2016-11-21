@@ -72,7 +72,8 @@ final class Temper {
     
     func resultsForFile(_ currentPath: String?, violations: Int) {
         guard let path = currentPath , path.characters.count > outputPath.characters.count else { return }
-        let relativePath: String = (path as NSString).substring(from: outputPath.characters.count + 1)
+        let range: Range = (outputPath.characters.count + 1)..<path.characters.count
+        let relativePath: String = path.substring(with: range)
         resultsOutput.append(ResultOutput(path: relativePath,
             warnings: violations))
     }

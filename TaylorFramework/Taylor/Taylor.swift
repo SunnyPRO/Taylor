@@ -76,3 +76,18 @@ public struct Taylor {
         return paths.pmap { scissors.tokenizeFileAtPath($0) }
     }
 }
+
+
+#if os(Linux)
+    import Glibc
+    func randomInt(_ number: Int) -> Int { return Int(random() % (number + 1)) }
+    
+    typealias ObjCBool = Bool
+    
+    extension ObjCBool {
+        var boolValue: Bool { return self }
+    }
+    
+#else
+    func randomInt(_ number: Int) -> Int { return Int(arc4random_uniform(UInt32(number))) }
+#endif

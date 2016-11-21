@@ -22,11 +22,11 @@ extension String {
     func deleteSuffix(_ suffix: String) -> String {
         guard hasSuffix(suffix) else { return self }
         
-        return (self as NSString).substring(to: Int(characters.count - suffix.characters.count))
+        return self.substring(with: Int(characters.count - suffix.characters.count))
     }
     
     func stringByAppendingPathComponent(_ string: String) -> String {
-        return (self as NSString).appendingPathComponent(string)
+        return NSString.init(string: self).appendingPathComponent(string)
     }
 }
 

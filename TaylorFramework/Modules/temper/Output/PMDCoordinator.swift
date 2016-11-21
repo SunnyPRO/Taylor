@@ -12,10 +12,10 @@ final class PMDCoordinator: WritingCoordinator {
     
     func writeViolations(_ violations: [Violation], atPath path: String) {
         FileManager().removeFileAtPath(path)
-        let xml = generateXML(violations)
-        let xmlData = xml.xmlData(withOptions: Int(XMLNode.Options.nodePrettyPrint.rawValue))
+        let xmlOption = Int.init(XMLNode.Options.nodePrettyPrint.rawValue)
+        let xml = generateXML(violations).xmlData
         do {
-            try xmlData.write(to: URL(fileURLWithPath: path), options: NSData.WritingOptions.withoutOverwriting)
+            try xml.write(to: URL(fileURLWithPath: path), options: NSData.WritingOptions.withoutOverwriting)
         } catch {
             print("Error while writing the XML object to file.")
         }

@@ -37,13 +37,13 @@ class ReporterComparator {
         var violations1 = JSONToViolationParser().parseFile(firstReporterPath)
         violations1 = violations1.map { ( violation: [String:AnyObject]) -> [String:AnyObject] in
             var violationCopy = violation
-            violationCopy["path"] = "" as AnyObject?
+            violationCopy["path"] = NSString(string: "") as AnyObject?
             return violationCopy
         }
         var violations2 = JSONToViolationParser().parseFile(secondReporterPath)
         violations2 = violations2.map { (violation: [String:AnyObject]) -> [String:AnyObject] in
             var violationCopy = violation
-            violationCopy["path"] = "" as AnyObject?
+            violationCopy["path"] = NSString(string: "") as AnyObject?
             return violationCopy
         }
         guard violations1.count == violations2.count else { return false }
